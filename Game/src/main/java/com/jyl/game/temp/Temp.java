@@ -8,6 +8,8 @@ import com.jyl.game.web.utils.robot.RobotUtils;
 import com.jyl.game.web.utils.screen.Screen_Ext_Utils;
 
 import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,7 +22,7 @@ public class Temp {
     public static void main(String[] args) {
 
     }
-    public static void temp(String path,int x,int y,String ck){
+    public static void temp(String path,int x,int y,String ck) throws AWTException, IOException, URISyntaxException {
         Robot robot = new Robot();
 
         Date now = new Date();
@@ -136,7 +138,7 @@ public class Temp {
 
                     robot.delay(1000);
                     if (a == len) {
-                        return null;
+                        return ;
                     }
                 }
             }
@@ -253,7 +255,7 @@ public class Temp {
 
                         robot.delay(1000);
                         if (a == len_JN) {
-                            return null;
+                            return ;
                         }
                     }
                 }
@@ -269,7 +271,7 @@ public class Temp {
                 SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 String stop = dateFormat1.format(now1);
                 System.out.println("结束时间为：" + stop);
-                return null;
+                return ;
             }
         }
 
