@@ -15,6 +15,16 @@ public class RobotUtils {
 
 
     /**
+     * 键盘输出
+     */
+    public static void pcImput(int x, int ms) throws AWTException {
+        Robot robot = new Robot();
+        robot.keyPress(x);
+        robot.delay(ms);
+        robot.keyRelease(x);
+    }
+
+    /**
      * 左键移动
      */
 

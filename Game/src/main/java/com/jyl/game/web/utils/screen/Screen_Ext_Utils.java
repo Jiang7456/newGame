@@ -33,14 +33,14 @@ public class Screen_Ext_Utils {
         String param = Check.checkFile(path1);
         //文字处理
         CharExtForJson.charExtForJsonFromIf(param);
-        if (CharExtForJson.getTemp() == 1) {
-            //防止转化卡主，重新截图判断
-            System.out.println("防止卡主，重新截图");
-            robot.delay(2000);
-            ScreenUtils.screenUtils(path1, screenX, screenY);
-            String param1 = Check.checkFile(path1);
-            CharExtForJson.charExtForJsonFromIf(param1);
-        }
+//        if (CharExtForJson.getTemp() == 1) {
+//            //防止转化卡主，重新截图判断
+//            System.out.println("防止卡主，重新截图");
+//            robot.delay(2000);
+//            ScreenUtils.screenUtils(path1, screenX, screenY);
+//            String param1 = Check.checkFile(path1);
+//            CharExtForJson.charExtForJsonFromIf(param1);
+//        }
 
     }
 
@@ -53,14 +53,14 @@ public class Screen_Ext_Utils {
         String param = Check.checkFile(path1);
         //文字处理
         CharExtForJson.charExtForJsonFromIf2(param);
-        if (CharExtForJson.getTemp() == 1) {
-            //防止转化卡主，重新截图判断
-            System.out.println("防止卡主，重新截图");
-            robot.delay(2000);
-            ScreenUtils.screenUtils(path1, screenX, screenY);
-            String param1 = Check.checkFile(path1);
-            CharExtForJson.charExtForJsonFromIf2(param1);
-        }
+//        if (CharExtForJson.getTemp() == 1) {
+//            //防止转化卡主，重新截图判断
+//            System.out.println("防止卡主，重新截图");
+//            robot.delay(2000);
+//            ScreenUtils.screenUtils(path1, screenX, screenY);
+//            String param1 = Check.checkFile(path1);
+//            CharExtForJson.charExtForJsonFromIf2(param1);
+//        }
     }
 
     public static void screen_Ext_Utils3(String path, int screenX, int screenY) throws IOException, URISyntaxException, AWTException {
@@ -72,14 +72,14 @@ public class Screen_Ext_Utils {
         String param = Check.checkFile(path1);
         //文字处理
         CharExtForJson.charExtForJsonFromIf2(param);
-        if (CharExtForJson.getTemp() == 1) {
-            //防止转化卡主，重新截图判断
-            System.out.println("防止卡主，重新截图");
-            robot.delay(2000);
-            ScreenUtils.screenUtils(path1, screenX, screenY);
-            String param1 = Check.checkFile(path1);
-            CharExtForJson.charExtForJsonFromIf2(param1);
-        }
+//        if (CharExtForJson.getTemp() == 1) {
+//            //防止转化卡主，重新截图判断
+//            System.out.println("防止卡主，重新截图");
+//            robot.delay(2000);
+//            ScreenUtils.screenUtils(path1, screenX, screenY);
+//            String param1 = Check.checkFile(path1);
+//            CharExtForJson.charExtForJsonFromIf2(param1);
+//        }
 
     }
 

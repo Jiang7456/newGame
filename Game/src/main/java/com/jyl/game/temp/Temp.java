@@ -13,16 +13,21 @@ import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.jyl.game.web.utils.repo.Repo.repo;
+
 /**
  * @Auther: pc
  * @Date: 2019-08-18 19:34
  * @Description:
  */
 public class Temp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AWTException, IOException, URISyntaxException {
+        String path = "C:\\Users\\pc\\Desktop\\jpg\\";
+        temp(path, 203, 222, "不使用");
 
     }
-    public static void temp(String path,int x,int y,String ck) throws AWTException, IOException, URISyntaxException {
+
+    public static void temp(String path, int x, int y, String ck) throws AWTException, IOException, URISyntaxException {
         Robot robot = new Robot();
 
         Date now = new Date();
@@ -71,6 +76,8 @@ public class Temp {
                     int temp2 = CharIf01.getTemp();
                     if (temp2 == 1) {
                         System.out.println("为幸运钟……跳过");
+                        //2.确定按钮
+                        RobotUtils.moseLeft(x + 349, y + 351, 500);
                         CharIf01.setTemp(0);
                         break;
                     }
@@ -88,6 +95,8 @@ public class Temp {
                     int temp3 = CharExtForJson.getTemp();
                     if (temp3 == 1) {
                         System.out.println("没有钟……跳过此格子");
+                        //2.确定按钮
+                        RobotUtils.moseLeft(x + 349, y + 351, 500);
                         CharExtForJson.setTemp(0);
                         break;
                     }
@@ -104,6 +113,8 @@ public class Temp {
                             int temp5 = CharExtForJson.getTemp();
                             if (temp5 == 1) {
                                 System.out.println("乾坤袋转化失败，重新放入钟");
+                                //2.确定按钮
+                                RobotUtils.moseLeft(x + 349, y + 351, 500);
                                 CharExtForJson.setTemp(0);
                                 break;
                             } else {
@@ -122,30 +133,42 @@ public class Temp {
                                     //2.确定按钮
                                     RobotUtils.moseLeft(x + 349, y + 351, 500);
                                 } else {
-                                    System.out.println("+++幸运钟+++");
-                                    //右键操作  坐标为乾坤袋坐标
-                                    RobotUtils.MouseRight(x + 236, y + 266, 500);
+                                    if (CharIf01.getTemp() == 4) {
+                                        //取消转化结果
+                                        RobotUtils.moseLeft(x + 349, y + 351, 500);
+                                        break;
+                                    } else {
+                                        System.out.println("+++幸运钟+++");
+                                        //右键操作  坐标为乾坤袋坐标
+                                        RobotUtils.MouseRight(x + 236, y + 266, 500);
+                                    }
+
                                 }
 
                             }
                         }
-                    } else {
-                        System.out.println("+++幸运钟+++");
-                        //右键操作  坐标为乾坤袋坐标
-                        RobotUtils.MouseRight(x + 236, y + 266, 500);
                     }
+//                    } else {
+//                        System.out.println("+++幸运钟+++");
+//                        //右键操作  坐标为乾坤袋坐标
+//                        RobotUtils.MouseRight(x + 236, y + 266, 500);
+//                    }
 
 
                     robot.delay(1000);
                     if (a == len) {
-                        return ;
+                        return;
                     }
                 }
             }
             System.out.println("包裹1检测完毕，开始锦囊1");
             RobotUtils.moseLeft(x + 518, y + 132, 500);
 //            return;
-            if (length == 1) {
+            /**
+             * num: 包裹的格子数量  等于检测到多少格换到锦囊1
+             **/
+            int num = 40;
+            if (length == num) {
                 //执行第6排
                 int length_JN = EnumCodeJn.values().length;
                 int len_JN = length_JN;
@@ -177,6 +200,8 @@ public class Temp {
                         int temp7 = CharExtForJson.getTemp();
                         if (temp7 == 1) {
                             System.out.println("没有钟……跳过此格子");
+                            //2.确定按钮
+                            RobotUtils.moseLeft(x + 349, y + 351, 500);
                             CharExtForJson.setTemp(0);
                             break;
                         }
@@ -187,6 +212,8 @@ public class Temp {
                         int temp8 = CharIf01.getTemp();
                         if (temp8 == 1) {
                             System.out.println("为幸运钟……跳过");
+                            //2.确定按钮
+                            RobotUtils.moseLeft(x + 349, y + 351, 500);
                             CharIf01.setTemp(0);
                             break;
                         }
@@ -204,6 +231,8 @@ public class Temp {
                         int temp9 = CharExtForJson.getTemp();
                         if (temp9 == 1) {
                             System.out.println("没有钟……跳过此格子");
+                            //2.确定按钮
+                            RobotUtils.moseLeft(x + 349, y + 351, 500);
                             CharExtForJson.setTemp(0);
                             break;
                         }
@@ -212,6 +241,7 @@ public class Temp {
                         CharIf01.charExtForIf2(CharExtForJson.getParam(), x, y);
                         //是否需要循环转化乾坤袋的垃圾钟
                         int temp10 = CharIf01.getTemp();
+
                         if (temp10 == 2) {
                             CharIf01.setTemp(0);
                             while (true) {
@@ -239,23 +269,29 @@ public class Temp {
                                         //2.确定按钮
                                         RobotUtils.moseLeft(x + 349, y + 351, 500);
                                     } else {
-                                        System.out.println("+++幸运钟+++");
-                                        //右键操作  坐标为乾坤袋坐标
-                                        RobotUtils.MouseRight(x + 236, y + 266, 500);
+                                        if (CharIf01.getTemp() == 4) {
+                                            //取消转化结果
+                                            RobotUtils.moseLeft(x + 349, y + 351, 500);
+                                            break;
+                                        } else {
+                                            System.out.println("+++幸运钟+++");
+                                            //右键操作  坐标为乾坤袋坐标
+                                            RobotUtils.MouseRight(x + 236, y + 266, 500);
+                                        }
                                     }
 
                                 }
                             }
-                        } else {
-                            System.out.println("+++幸运钟+++");
-                            //右键操作  坐标为乾坤袋坐标
-                            RobotUtils.MouseRight(x + 236, y + 266, 500);
                         }
-
+//                        } else {
+//                            System.out.println("+++幸运钟+++");
+//                            //右键操作  坐标为乾坤袋坐标
+//                            RobotUtils.MouseRight(x + 236, y + 266, 500);
+//                        }
 
                         robot.delay(1000);
                         if (a == len_JN) {
-                            return ;
+                            return;
                         }
                     }
                 }
@@ -263,7 +299,8 @@ public class Temp {
                 //是否使用仓库
                 if (ck == "使用") {
                     System.out.println("检测仓库");
-
+                    repo(126, 160,"ck3","ck4","ck5","ck6","ck7");
+                    continue;
                 }
 
                 //结束时间为：
@@ -271,7 +308,7 @@ public class Temp {
                 SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 String stop = dateFormat1.format(now1);
                 System.out.println("结束时间为：" + stop);
-                return ;
+                return;
             }
         }
 
