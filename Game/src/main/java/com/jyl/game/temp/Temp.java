@@ -23,7 +23,7 @@ import static com.jyl.game.web.utils.repo.Repo.repo;
 public class Temp {
     public static void main(String[] args) throws AWTException, IOException, URISyntaxException {
         String path = "C:\\Users\\pc\\Desktop\\jpg\\";
-        temp(path, 203, 222, "不使用");
+        temp(path, 235, 101, "不使用");
 
     }
 
