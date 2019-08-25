@@ -1,9 +1,12 @@
 package com.jyl.game.JyTemp;
+
 import com.jyl.game.JyTemp.utils.MouseCharIfUtils;
 import com.jyl.game.web.utils.robot.RobotUtils;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,41 +16,46 @@ import java.util.Date;
  * @Description: 盆栽
  */
 public class JyTemp {
-    public static void main(String[] args) throws AWTException {
+    public static void main(String[] args) throws AWTException, IOException, URISyntaxException {
         int x = 749;
         int y = 19;
         Robot robot = new Robot();
         iffor();
     }
 
-    public static void iffor() throws AWTException {
+    public static void iffor() throws AWTException, IOException, URISyntaxException {
+        String path = "C:\\Users\\pc\\Desktop\\jpg\\家园种植个数.jpg";
+        Robot robot  = new Robot();
         for (int i = 0; i <= 20; i++) {
             Date now = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             String start = dateFormat.format(now);
-            System.out.println("当前是第：" + i+"次"+";"+"时间为："+start);
+            System.out.println("当前是第：" + i + "次" + ";" + "时间为：" + start);
+
+//            //第四个号点击边框
+//            RobotUtils.moseLeft(1902, 424, 1000);
+//            //bb收菜
+//            BBFood.bbFood(path, 802, 413);
+
+
             //第一个号点击边框
-            RobotUtils.moseLeft(1898, 413, 1000);
-           jyTemp(792, 405);
+            RobotUtils.moseLeft(1746, 16, 1000);
+            jyTemp(742, 4);
 
             //第二个号点击边框
-            RobotUtils.moseLeft(1821, 15, 1000);
-            jyTemp(730, 2);
+            RobotUtils.moseLeft(334, 223, 1000);
+            jyTemp(286, 213);
 
             //第三个号点击边框
-            RobotUtils.moseLeft(597, 95, 1000);
-            jyTemp(450, 83);
-
-            //第四个号点击边框
-            RobotUtils.moseLeft(341, 222, 1000);
-            jyTemp(286, 211);
-            //第五个号点击边框
-            RobotUtils.moseLeft(228, 337, 1000);
-            jyTemp(122, 325);
-            Robot robot  = new Robot();
-            for (int j=1;j<=5;j++) {
-                robot.delay(59999);
+            RobotUtils.moseLeft(171, 337, 1000);
+            jyTemp(120, 326);
+            for (int j=1;j<=21;j++){
+                robot.delay(60000);
             }
+//            jyTemp(286, 211);
+            //第五个号点击边框
+//            RobotUtils.moseLeft(228, 337, 1000);
+//            jyTemp(122, 325);
         }
 
 
@@ -61,7 +69,7 @@ public class JyTemp {
         MouseCharIfUtils.mouse(x, y);
         //点击进入家园
         System.out.println("进入家园");
-        RobotUtils.moseLeft(x + 275, y + 352, 15000);
+        RobotUtils.moseLeft(x + 273, y + 374, 15000);
 
         //关闭精灵
         System.out.println("关闭精灵");
@@ -108,12 +116,20 @@ public class JyTemp {
         System.out.println("点击种植");
         RobotUtils.moseLeft(x + 266, y + 351, 500);
 
-        //点击种植作物类型
+        //点击种植作物类型 类型一 树木
         System.out.println("点击种植作物类型");
         RobotUtils.moseLeft(x + 246, y + 136, 500);
-        //点击种植物品
+        //点击种植作物类型 类型一 花卉
+//        RobotUtils.moseLeft(x + 321, y + 137, 500);
+        //点击种植作物类型 类型一 蔬果
+//        RobotUtils.moseLeft(x + 394, y + 136, 500);
+
+
+        //点击种植物品 15分钟
         System.out.println("点击种植物品");
-        RobotUtils.moseLeft(x + 234, y + 175, 500);
+//        RobotUtils.moseLeft(x + 234, y + 175, 500);
+        //35 分钟
+        RobotUtils.moseLeft(x + 233, y + 198, 500);
         //点击栽种
         System.out.println("点击栽种");
         RobotUtils.moseLeft(x + 410, y + 528, 500);
@@ -133,12 +149,20 @@ public class JyTemp {
         System.out.println("点击种植");
         RobotUtils.moseLeft(x + 266, y + 351, 500);
 
-        //点击种植作物类型
+        //点击种植作物类型 类型一 树木
         System.out.println("点击种植作物类型");
         RobotUtils.moseLeft(x + 246, y + 136, 500);
-        //点击种植物品
+        //点击种植作物类型 类型一 花卉
+//        RobotUtils.moseLeft(x + 321, y + 137, 500);
+        //点击种植作物类型 类型一 蔬果
+//        RobotUtils.moseLeft(x + 394, y + 136, 500);
+
+        //点击种植物品 15分钟
         System.out.println("点击种植物品");
-        RobotUtils.moseLeft(x + 234, y + 175, 500);
+//        RobotUtils.moseLeft(x + 234, y + 175, 500);
+        //35 分钟
+        RobotUtils.moseLeft(x + 233, y + 198, 500);
+
         //点击栽种
         System.out.println("点击栽种");
         RobotUtils.moseLeft(x + 410, y + 528, 500);

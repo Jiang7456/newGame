@@ -76,6 +76,7 @@ public class MouseCharIfUtils {
         RobotUtils.MouseRight(x+579,y+108,500);
         RobotUtils.MouseRight(x+579,y+108,500);
         r.delay(2000);
+
     }
 
 

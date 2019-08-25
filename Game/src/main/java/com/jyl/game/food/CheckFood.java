@@ -96,7 +96,8 @@ public class CheckFood {
              * 确定
              */
             RobotUtils.moseLeft(x + 343, y + 463, 500);
-            System.out.println("延迟30分钟");
+
+            System.out.println("延迟35分钟");
             for (int i = 1; i <= 35; i++) {
                 robot.delay(200);
                 robot.delay(60000);
