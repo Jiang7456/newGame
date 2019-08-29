@@ -16,7 +16,7 @@ public class CheckFood {
 
     public static void main(String[] args) throws AWTException {
 
-        checkFood(796, 413);
+        checkFood(765, 323);
     }
 
 

@@ -32,23 +32,21 @@ public class JyTemp {
             String start = dateFormat.format(now);
             System.out.println("当前是第：" + i + "次" + ";" + "时间为：" + start);
 
-//            //第四个号点击边框
-//            RobotUtils.moseLeft(1902, 424, 1000);
-//            //bb收菜
-//            BBFood.bbFood(path, 802, 413);
-
-
             //第一个号点击边框
-            RobotUtils.moseLeft(1746, 16, 1000);
-            jyTemp(742, 4);
+            RobotUtils.moseLeft(1861, 23, 1000);
+            jyTemp(808, 10);
 
             //第二个号点击边框
-            RobotUtils.moseLeft(334, 223, 1000);
-            jyTemp(286, 213);
+            RobotUtils.moseLeft(558, 91, 1000);
+            jyTemp(501, 78);
 
             //第三个号点击边框
-            RobotUtils.moseLeft(171, 337, 1000);
-            jyTemp(120, 326);
+            RobotUtils.moseLeft(410, 172, 1000);
+            jyTemp(329, 162);
+
+            //第四个号点击边框
+            RobotUtils.moseLeft(227, 306, 1000);
+            jyTemp(158, 294);
             for (int j=1;j<=21;j++){
                 robot.delay(60000);
             }
@@ -57,7 +55,10 @@ public class JyTemp {
 //            RobotUtils.moseLeft(228, 337, 1000);
 //            jyTemp(122, 325);
         }
-
+        Date now = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        String start = dateFormat.format(now);
+        System.out.println("结束时间为："+start);
 
     }
 
@@ -118,11 +119,11 @@ public class JyTemp {
 
         //点击种植作物类型 类型一 树木
         System.out.println("点击种植作物类型");
-        RobotUtils.moseLeft(x + 246, y + 136, 500);
+//        RobotUtils.moseLeft(x + 246, y + 136, 500);
         //点击种植作物类型 类型一 花卉
 //        RobotUtils.moseLeft(x + 321, y + 137, 500);
         //点击种植作物类型 类型一 蔬果
-//        RobotUtils.moseLeft(x + 394, y + 136, 500);
+        RobotUtils.moseLeft(x + 394, y + 136, 500);
 
 
         //点击种植物品 15分钟
@@ -151,11 +152,11 @@ public class JyTemp {
 
         //点击种植作物类型 类型一 树木
         System.out.println("点击种植作物类型");
-        RobotUtils.moseLeft(x + 246, y + 136, 500);
+//        RobotUtils.moseLeft(x + 246, y + 136, 500);
         //点击种植作物类型 类型一 花卉
 //        RobotUtils.moseLeft(x + 321, y + 137, 500);
         //点击种植作物类型 类型一 蔬果
-//        RobotUtils.moseLeft(x + 394, y + 136, 500);
+        RobotUtils.moseLeft(x + 394, y + 136, 500);
 
         //点击种植物品 15分钟
         System.out.println("点击种植物品");
